@@ -1,0 +1,31 @@
+.app-container {
+
+  .modal-container {
+    position: absolute;
+    width: 20em;
+    height: 20em;
+    border: 1px solid black;
+    z-index: 9999;
+    background: #fff;
+  }
+}
+
+table {
+  border-collapse: collapse;
+
+  th, td {
+    border: 1px solid black;
+    padding: 7px;
+  }
+
+  td {
+
+    #repo-description {
+      font-weight: 300;
+    }
+  }
+
+  #repo-name-col {
+    width: 300px;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 //   - Name (include description in line below name in lighter print)
 //  - Last Updated
@@ -9,12 +10,15 @@ import React from 'react';
 //  - Link to GitHub repo page (to be opened in new tab)
 
 
-const Repo = ({ data }) => {
-  const { name, updated_at, language, watchers_count, forks_count, html_url } = data;
-
+const Repo = ({ data, setCurrentlyViewedRepo }) => {
+  const { name, description, id, updated_at, language, watchers_count, forks_count, html_url } = data;
+  // could you create a constructor with all these as fields and then pass in data to instantiate a new object and use that?
   return (
-    <tr>
-      <td>{name}</td>
+    <tr onClick={() => setCurrentlyViewedRepo(data)}>
+      <td id="repo-name-col">
+        {name}
+        <p id="repo-description">{description}</p>
+      </td>
       <td>{updated_at}</td>
       <td>{language}</td>
       <td>{watchers_count}</td>
