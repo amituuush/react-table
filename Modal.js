@@ -6,10 +6,12 @@ const Modal = ({ data, clearCurrentlyViewedRepo }) => {
   const { name, size } = data;
 
   return (
-    <div className="modal-container">
-      <div onClick={() => clearCurrentlyViewedRepo}>X</div>
-      <p>{name}</p>
-      <p>{size}</p>
+    <div className="modal-container" onClick={() => clearCurrentlyViewedRepo()}>
+      <div className="modal">
+        <div onClick={() => clearCurrentlyViewedRepo()}>X</div>
+        <p>{name}</p>
+        <p>{size}</p>
+      </div>
     </div>
   );
 };
