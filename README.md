@@ -9,7 +9,7 @@
 2. Run `npm start`
 3. Open `index.html` in your browser
 
-## Considerations
+## How It Works
 This app functions simply. On `ComponentDidMount`, an `AJAX` request is sent to the provided API endpoint and sets the response to `this.state.repos`. Within the `render()` function, we map through this list of repos and render a `<Repo />` component for each, passing in data and a method (`this.setCurrentlyViewedRepo`). `<Repo />` then renders out the appropriate data as a `<tr>`. If a row is clicked, `this.setCurrentlyViewedRepo` is called and sets that row's data as `this.state.currentlyViewedRepo`, which triggers the <Modal /> component to show. When a user clicks 'close' or clicks outside the modal, `this.state.currentlyViewedRepo` is set to `undefined`, which hides the modal.
 
 ## Possible Improvements
