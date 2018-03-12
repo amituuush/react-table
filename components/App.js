@@ -5,12 +5,6 @@ import Repo from './Repo';
 import Modal from './Modal';
 import '../styles.scss';
 
-{/*
-TODO:
-  - Number of Issues
-*/}
-
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +21,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // TODO: move to config
     axios.get('https://api.github.com/orgs/HelloFax/repos')
       .then((res) => this.setState({ repos: res.data }))
       .catch((err) => { console.log(err); });
