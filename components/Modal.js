@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './styles.scss'
+import '../styles.scss'
 
 const Modal = ({ data, clearCurrentlyViewedRepo }) => {
   const { name, size } = data;
@@ -8,9 +8,9 @@ const Modal = ({ data, clearCurrentlyViewedRepo }) => {
   return (
     <div className="modal-container" onClick={() => clearCurrentlyViewedRepo()}>
       <div className="modal">
-        <div onClick={() => clearCurrentlyViewedRepo()}>X</div>
-        <p>{name}</p>
-        <p>{size}</p>
+        <h3>{name}</h3>
+        <p><span>Size:</span> {size}</p>
+        <button onClick={() => clearCurrentlyViewedRepo()}>Close</button>
       </div>
     </div>
   );

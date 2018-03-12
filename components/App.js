@@ -3,20 +3,15 @@ import axios from 'axios';
 
 import Repo from './Repo';
 import Modal from './Modal';
-import './styles.scss';
+import '../styles.scss';
 
 {/*
 TODO:
-  - Name (include description in line below name in lighter print)
   - Number of Issues
-  - language icon?
-  - center table and header
-  - look into responsive tables
-  -
 */}
 
+
 class App extends Component {
-  // TODO: need props and super?
   constructor(props) {
     super(props);
 
@@ -24,6 +19,8 @@ class App extends Component {
       repos: [],
       currentlyViewedRepo: undefined
     };
+
+    this.tableHeaders = ["Name", "Last Updated", "Primary Language", "Watchers", "Forks", "Issues", "Repo Link"];
 
     this.setCurrentlyViewedRepo = this.setCurrentlyViewedRepo.bind(this);
     this.clearCurrentlyViewedRepo = this.clearCurrentlyViewedRepo.bind(this);
@@ -53,6 +50,10 @@ class App extends Component {
       />;
     });
 
+    const tableHeaders = this.tableHeaders.map((name, i) => {
+      return <th key={i}>{name}</th>;
+    });
+
     return (
       <div className="app-container">
         {this.state.currentlyViewedRepo ?
@@ -63,16 +64,7 @@ class App extends Component {
         <h1>HelloFax Repositories</h1>
         <table>
           <thead>
-            <tr>
-              {/* map through col names? */}
-              <th>Name</th>
-              <th>Last Updated</th>
-              <th>Primary Language</th>
-              <th>Watchers</th>
-              <th>Forks</th>
-              <th>Issues</th>
-              <th>Repo Link</th>
-            </tr>
+            <tr>{tableHeaders}</tr>
           </thead>
           <tbody>
             {repos}

@@ -11,7 +11,7 @@ import moment from 'moment';
 
 
 const Repo = ({ data, setCurrentlyViewedRepo }) => {
-  const { name, description, id, updated_at, language, watchers_count, forks_count, html_url } = data;
+  const { name, description, id, updated_at, language, watchers_count, forks_count, open_issues_count, html_url } = data;
   // could you create a constructor with all these as fields and then pass in data to instantiate a new object and use that?
   return (
     <tr onClick={() => setCurrentlyViewedRepo(data)}>
@@ -23,8 +23,8 @@ const Repo = ({ data, setCurrentlyViewedRepo }) => {
       <td>{language}</td>
       <td>{watchers_count}</td>
       <td>{forks_count}</td>
-      <td>Placeholder</td>
-      <td><a href={html_url}>Link to repo</a></td>
+      <td>{open_issues_count}</td>
+      <td><a href={html_url} target="_blank">Repo</a></td>
 
       {/* TODO: add in number of issues*/}
     </tr>

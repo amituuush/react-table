@@ -1,7 +1,5 @@
 .app-container {
   width: 100%;
-  height: 100%;
-  overflow: auto;
   padding: 3em 0em;
   background: #1EB4E4;
 
@@ -18,15 +16,24 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid #38678f;
 
+
     tr:nth-child(even) {
       background: rgb(231, 231, 231);
+    }
+
+    tr {
+
+      &:hover {
+        cursor: pointer;
+        background: rgb(206, 206, 206);
+      }
     }
 
     th {
       background: #1EB4E4;
       text-shadow: 0 1px 0 #38678f;
       color: white;
-      font-weight: 600;
+      font-weight: 400;
       border: 1px solid #38678f;
       box-shadow: inset 0px 1px 2px rgb(47, 190, 238);
     }
@@ -37,9 +44,28 @@
     }
 
     td {
+      text-align: center;
 
       #repo-description {
+        margin-top: 0.5em;
+        font-size: 0.9em;
         font-weight: 300;
+      }
+
+      a {
+        width: 4em;
+        padding: 0.4em 0.8em;
+        background: #2CB5E2;
+        border: 1px solid #3A678D;
+        border-radius: 3px;
+        color: #fff;
+        text-shadow: 0 1px 0 #38678f;
+        text-decoration: none;
+
+        &:hover {
+          cursor: pointer;
+          background: rgb(76, 198, 238);
+        }
       }
     }
 
@@ -49,25 +75,55 @@
   }
 
   .modal-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
     .modal {
       width: 20em;
-      height: 20em;
+      height: 13em;
       margin: 0 auto;
-      border: 1px solid black;
+      padding: 1em;
+      border: 1px solid #3A678D;
       z-index: 9999;
       background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      text-align: center;
+
+      h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 1.5em;
+        font-weight: 600;
+
+        span { font-weight: 400; }
+      }
+
+      button {
+        padding: 0.7em 2em;
+        margin-top: 1.5em;
+        background: #2CB5E2;
+        border: 1px solid #3A678D;
+        border-radius: 3px;
+        color: #fff;
+        text-shadow: 0 1px 0 #38678f;
+        text-decoration: none;
+
+        &:hover {
+          cursor: pointer;
+          background: rgb(76, 198, 238);
+        }
+      }
     }
   }
-
 }
 
 
